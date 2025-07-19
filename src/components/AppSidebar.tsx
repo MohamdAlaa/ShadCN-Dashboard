@@ -9,6 +9,7 @@ import {
   Projector,
   Search,
   Settings,
+  ShieldQuestionMark,
   User,
 } from "lucide-react";
 import {
@@ -184,8 +185,8 @@ const AppSidebar = () => {
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
                   <Link href="/#">
-                    <Projector />
-                    See All Projects
+                    <ShieldQuestionMark />
+                    What you want to do?
                   </Link>
                 </SidebarMenuButton>
                 <SidebarMenuSub>
