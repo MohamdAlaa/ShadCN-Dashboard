@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Card, CardContent, CardFooter, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
+import { ScrollArea } from "./ui/scroll-area";
 
 const popularContent = [
   {
@@ -94,6 +95,7 @@ const CardList = ({ title }: { title: string }) => {
   return (
     <div className="">
       <h1 className="text-lg font-medium mb-6">{title}</h1>
+
       <div className="flex flex-col gap-2">
         {list.map((item) => (
           <Card
