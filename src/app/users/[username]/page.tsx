@@ -1,3 +1,4 @@
+"use client";
 import CardList from "@/components/CardList";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -19,16 +20,13 @@ import { Sheet, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 // import EditUser from "@/components/EditUser";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { useParams } from "next/navigation";
+import EditUser from "@/components/EditUser";
 // import AppLineChart from "@/components/AppLineChart";
 
-interface SingleUserPageProps {
-  params: {
-    username: string;
-  };
-}
-
-const SingleUserPage = ({ params }: SingleUserPageProps) => {
-  const { username } = params;
+const SingleUserPage = () => {
+  const params = useParams();
+  const username = params.username;
 
   return (
     <div className="">
@@ -122,8 +120,7 @@ const SingleUserPage = ({ params }: SingleUserPageProps) => {
                 <SheetTrigger asChild>
                   <Button>Edit User</Button>
                 </SheetTrigger>
-                {/* <EditUser /> */}
-                Edit user
+                <EditUser />
               </Sheet>
             </div>
             <div className="space-y-4 mt-4">
@@ -135,19 +132,19 @@ const SingleUserPage = ({ params }: SingleUserPageProps) => {
               </div>
               <div className="flex items-center gap-2">
                 <span className="font-bold">Username:</span>
-                <span>john.doe</span>
+                <span>{username}</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="font-bold">Email:</span>
-                <span>john.doe@gmail.com</span>
+                <span>mohamedalaaelmenyawe404@gmail.com</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="font-bold">Phone:</span>
-                <span>+1 234 5678</span>
+                <span>+20 011125554334</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="font-bold">Location:</span>
-                <span>New York, NY</span>
+                <span>Cairo, Egypt</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="font-bold">Role:</span>
@@ -172,7 +169,7 @@ const SingleUserPage = ({ params }: SingleUserPageProps) => {
                 <AvatarImage src="https://github.com/shadcn.png" />
                 <AvatarFallback>JD</AvatarFallback>
               </Avatar>
-              <h1 className="text-xl font-semibold">John Doe</h1>
+              <h1 className="text-xl font-semibold">{username}</h1>
             </div>
             <p className="text-sm text-muted-foreground">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel
