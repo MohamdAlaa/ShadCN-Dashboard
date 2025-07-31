@@ -22,6 +22,7 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useParams } from "next/navigation";
 import EditUser from "@/components/EditUser";
+import AppLineChart from "@/components/AppLineChart";
 // import AppLineChart from "@/components/AppLineChart";
 
 const SingleUserPage = () => {
@@ -181,8 +182,7 @@ const SingleUserPage = () => {
           {/* CHART CONTAINER */}
           <div className="bg-primary-foreground p-4 rounded-lg">
             <h1 className="text-xl font-semibold">User Activity</h1>
-            {/* <AppLineChart />  */}
-            App Line Chart
+            <AppLineChart />
           </div>
         </div>
       </div>

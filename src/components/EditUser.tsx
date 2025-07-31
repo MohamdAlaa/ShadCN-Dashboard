@@ -32,10 +32,10 @@ import {
 const formSchema = z.object({
   username: z
     .string()
-    .min(2, { message: "Username must be at least 2 characters!" })
+    .min(3, { message: "Username must be at least 2 characters!" })
     .max(50),
-  email: z.string().min(5, { message: "Email is required!" }),
-  phone: z.string().min(10).max(15),
+  email: z.string().email({ message: "Please enter a valid email address!" }),
+  phone: z.string().min(10).max(18),
   location: z.string().min(2),
   role: z.enum(["admin", "user"]),
 });
@@ -54,13 +54,16 @@ const EditUser = () => {
       role: "admin",
     },
   });
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    console.log(values);
+  }
   return (
     <SheetContent>
       <SheetHeader>
         <SheetTitle className="mb-4">Edit User</SheetTitle>
         <SheetDescription asChild>
           <Form {...form}>
-            <form className="space-y-8">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
               <FormField
                 control={form.control}
                 name="username"
@@ -132,9 +135,12 @@ const EditUser = () => {
                   <FormItem>
                     <FormLabel>Role</FormLabel>
                     <FormControl>
-                      <Select>
+                      <Select
+                        onValueChange={field.onChange}
+                        value={field.value}
+                      >
                         <SelectTrigger>
-                          <SelectValue placeholder="Role" />
+                          <SelectValue placeholder="select Role" />
                         </SelectTrigger>
                         <SelectContent>
                           <SelectItem value="admin">Admin</SelectItem>
