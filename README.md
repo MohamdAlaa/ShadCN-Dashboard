@@ -14,8 +14,5 @@ A modern, responsive admin dashboard built with [Next.js](https://nextjs.org/), 
 - 🧩 Modular and scalable components
 - 📊 Dashboard widgets (Revenue, Transactions, Todo List, Analytics)
 - 🔍 Sidebar with collapsible sections and icons
+- 🧾 Payments table with user and status info
 - 📱 Fully responsive layout
-
----
-
-## 📁 Folder Structure
