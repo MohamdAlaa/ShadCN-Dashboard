@@ -23,6 +23,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useParams } from "next/navigation";
 import EditUser from "@/components/EditUser";
 import AppLineChart from "@/components/AppLineChart";
+import { useState } from "react";
 // import AppLineChart from "@/components/AppLineChart";
 
 const SingleUserPage = () => {
