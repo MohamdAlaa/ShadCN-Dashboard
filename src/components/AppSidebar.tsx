@@ -2,6 +2,7 @@ import {
   Calendar,
   ChevronDown,
   ChevronUp,
+  CreditCard,
   Home,
   Inbox,
   Logs,
@@ -51,6 +52,16 @@ const items = [
     title: "Home",
     url: "/",
     icon: Home,
+  },
+  {
+    title: "Payments",
+    url: "/payments",
+    icon: CreditCard,
+  },
+  {
+    title: "Single User",
+    url: "/users/MohamedAlaa",
+    icon: User,
   },
   {
     title: "Inbox",
